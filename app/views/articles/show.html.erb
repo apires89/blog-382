@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<!-- <div class="card-category" style="background-image: url('<%#= cl_image_path @article.photo.key %>')">
+</div> -->
+
+<% @article.photos.each do |photo|  %>
+ <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+<%#= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
